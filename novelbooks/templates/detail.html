@@ -5,7 +5,7 @@
 <html class="loaded"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     
-    <title>《娱乐富三代》_宝木辰铭著_都市_起点中文网</title>
+    <title>《{{ book.name }}》_{{ book.author }}著_{{ book.type.name }}_笔趣阁</title>
     <meta name="description" content="娱乐富三代，娱乐富三代小说阅读。都市小说娱乐富三代由作家宝木辰铭创作，起点小说提供娱乐富三代首发最新章节及章节列表，娱乐富三代最新更新尽在起点中文网">
     <meta name="keywords" content="娱乐富三代">
     <meta name="robots" content="all">
@@ -16,8 +16,9 @@
     <meta http-equiv="mobile-agent" content="format=html5; url=http://m.qidian.com/book/showbook.aspx?bookid=1015055921">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="{% static 'js/jquery-1.4.1.min.js' %}"></script>
     <script src="{% static 'js/stats.js.下载' %}" name="MTAH5" sid="500451537"></script><script src="{% static 'js/push.js.下载' %}"></script><script>
-        document.domain = 'qidian.com';
+        // document.domain = 'qidian.com';
     </script>
     <script>
         var speedTimer = [],
@@ -208,18 +209,15 @@
     <div class="book-info ">
         <h1>
             
-            <em>娱乐富三代</em>
+            <em>{{ book.name }}</em>
             <span><a class="writer" href="https://me.qidian.com/authorIndex.aspx?id=4763380" target="_blank" data-eid="qd_G08">宝木辰铭</a> 著</span>
             
         </h1>
         <p class="tag"><span class="blue">连载</span>
             
             <span class="blue">签约</span>
-            
-            
-            <span class="blue">VIP</span>
-            
-            <a href="https://www.qidian.com/dushi" class="red" target="_blank" data-eid="qd_G10">都市</a>
+
+            <a href="https://www.qidian.com/dushi" class="red" target="_blank" data-eid="qd_G10">{{ book.type.name }}</a>
             
             <a href="https://www.qidian.com/all?chanId=4&amp;subCateId=151" class="red" target="_blank" data-eid="qd_G11">娱乐明星</a>
             
@@ -232,12 +230,9 @@
             <em><style>@font-face { font-family: rtvNQrmI; src: url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.eot?') format('eot'); src: url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.woff') format('woff'), url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.ttf') format('truetype'); } .rtvNQrmI { font-family: 'rtvNQrmI' !important;     display: initial !important; color: inherit !important; vertical-align: initial !important; }</style><span class="rtvNQrmI">&#100376;&#100376;&#100372;</span></em><cite>会员周点击</cite><i>|</i> -->
             <em><style>@font-face { font-family: rtvNQrmI; src: url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.eot?') format('eot'); src: url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.woff') format('woff'), url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.ttf') format('truetype'); } .rtvNQrmI { font-family: 'rtvNQrmI' !important;     display: initial !important; color: inherit !important; vertical-align: initial !important; }</style><span class="rtvNQrmI">𘠛𘠖𘠝𘠘</span></em><cite>万总推荐</cite><i>|</i><em><style>@font-face { font-family: rtvNQrmI; src: url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.eot?') format('eot'); src: url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.woff') format('woff'), url('https://qidian.gtimg.com/qd_anti_spider/rtvNQrmI.ttf') format('truetype'); } .rtvNQrmI { font-family: 'rtvNQrmI' !important;     display: initial !important; color: inherit !important; vertical-align: initial !important; }</style><span class="rtvNQrmI">𘠟𘠟𘠝𘠙</span></em><cite>周推荐</cite></p>
         
-        <p><a class="red-btn J-getJumpUrl " href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BtDFU6I1nZZMs5iq0oQwLQ2" id="readBtn" data-eid="qd_G03" data-bid="1015055921" data-firstchapterjumpurl="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BtDFU6I1nZZMs5iq0oQwLQ2">免费试读</a><a class="blue-btn add-book" id="addBookBtn" href="javascript:" data-eid="qd_G05" data-bookid="1015055921" data-bid="1015055921">加入书架</a>
+        <p><a class="red-btn J-getJumpUrl " href="{% url 'books:content' book.id 1 %}" id="readBtn" data-eid="qd_G03" data-bid="1015055921" data-firstchapterjumpurl="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BtDFU6I1nZZMs5iq0oQwLQ2">免费试读</a><a class="blue-btn add-book" id="addBookBtn" href="javascript:" data-eid="qd_G05" data-bookid="1015055921" data-bid="1015055921">加入书架</a>
             
             <a class="blue-btn" id="topVoteBtn" href="javascript:" data-showtype="1" data-eid="qd_G06">投票互动</a>
-            
-            <a class="blue-btn" id="downloadAppBtn" href="https://www.yuewen.com/app.html#appqd">下载App<br>新人免费读
-            </a>
         </p>
         
     </div>
@@ -269,378 +264,50 @@
     </div>
     <div class="take-wrap">
         
-        
-        
-            <a class="blue" id="subscribe" href="javascript:" data-eid="qd_G13"><em class="iconfont"></em>订阅</a>
-        
-        
-        <i></i>
-        
-        
         <a class="blue download" id="download" href="javascript:" data-eid="qd_G14"><em class="iconfont"></em>下载
         
     </a>
     </div>
     
-
 </div>
 
-        
         <div class="content-nav-wrap cf" data-l1="3">
             <div class="nav-wrap fl">
                 <ul>
-                    <li class=""><a class="lang" id="j-bookInfoPage" href="javascript:" data-eid="qd_G15">作品信息</a></li>
-                    <li class="j_catalog_block act"><a class="lang" href="javascript:" id="j_catalogPage" data-eid="qd_G16">目录<i><span id="J-catalogCount">(75章)</span></i></a></li>
+                    <li class="act"><a class="lang" id="j-bookInfoPage" href="javascript:" data-eid="qd_G15">作品信息</a></li>
+                    <li class="j_catalog_block"><a class="lang" href="javascript:" id="j_catalogPage" data-eid="qd_G16">目录<i><span id="J-catalogCount">({{ totalpage }}章)</span></i></a></li>
                     
                     <!-- <li class="j_discussion_block"><a class="lang" href="//forum.qidian.com/NewForum/List.aspx?BookId=1015055921" target="_blank" data-eid="qd_G17">作品讨论<i><span id="J-discusCount"></span></i></a></li> -->
                     
                 </ul>
             </div>
         </div>
-        <div class="catalog-content-wrap" id="j-catalogWrap" data-l1="14" style="display: block;">
+        <div class="catalog-content-wrap" id="j-catalogWrap" data-l1="14" style="display: none;">
             <div class="go-top">
                 <div class="go-top-wrap">
-                    <a href="https://book.qidian.com/info/1015055921#" class="icon-go-top"><em class="iconfont" data-eid="qd_G72"></em></a>
                 </div>
             </div>
             
             <div class="volume-wrap">
-                
                 <div class="volume">
                     <div class="cover"></div>
                     
-                    <h3>
-                        
-                        <a class="subscri" href="https://read.qidian.com/hankread/1015055921/77227890" target="_blank"><em class="btn"><b class="iconfont"></b>分卷阅读</em></a>
-                        
-                        正文卷<i>·</i>共73章<span class="free"> 免费</span><em class="count">本卷共<cite>185396</cite>字</em></h3>
+                    <h3>                     
+                        <!-- <a class="subscri" href="https://read.qidian.com/hankread/1015055921/77227890" target="_blank"><em class="btn"><b class="iconfont"></b>分卷阅读</em></a> -->                       
+                        正文卷<i>·</i>共{{ totalpage }}章<span class="free"> 免费</span><em class="count">本卷共<cite>4853964</cite>字</em></h3>
                     <ul class="cf">
-                        
-                        <li data-rid="1"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BtDFU6I1nZZMs5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BtDFU6I1nZZMs5iq0oQwLQ2" title="首发时间：2019-04-01 08:25:29 章节字数：3202">第一章 有钱的才能叫富三代</a>
+                        {% for content in content_list %}
+                        <li data-rid="{{ forloop.count }}"><a href="{% url 'books:content' book.id content.num %}" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BtDFU6I1nZZMs5iq0oQwLQ2" title="首发时间：2019-04-01 08:25:29 章节字数：3202">{{ content.name }}</a>
                             
                         </li>
-                        
-                        <li data-rid="2"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/AIcjeCxm615p4rPq4Fd4KQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/AIcjeCxm615p4rPq4Fd4KQ2" title="首发时间：2019-04-01 19:41:08 章节字数：2035">第二章 白·夏洛克·福尔摩斯·沐</a>
-                            
-                        </li>
-                        
-                        <li data-rid="3"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/mfQmd_UKUSbwrjbX3WA1AA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/mfQmd_UKUSbwrjbX3WA1AA2" title="首发时间：2019-04-02 16:14:21 章节字数：2027">第三章 新人演员，售价五万（收藏、票票！）</a>
-                            
-                        </li>
-                        
-                        <li data-rid="4"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/c1RqcKSsnpe2uJcMpdsVgA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/c1RqcKSsnpe2uJcMpdsVgA2" title="首发时间：2019-04-03 11:00:00 章节字数：3202">第四章 是时候表演真正的技术了</a>
-                            
-                        </li>
-                        
-                        <li data-rid="5"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/IQvU8b5RlETgn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/IQvU8b5RlETgn4SMoDUcDQ2" title="首发时间：2019-04-03 23:33:58 章节字数：2452">第五章 我们的目标是……</a>
-                            
-                        </li>
-                        
-                        <li data-rid="6"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BwiMDrV_5vX4p8iEw--PPw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BwiMDrV_5vX4p8iEw--PPw2" title="首发时间：2019-04-04 16:00:20 章节字数：2367">第六章 冬天就要乖乖的喝热水</a>
-                            
-                        </li>
-                        
-                        <li data-rid="7"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/LDKJwycICI62uJcMpdsVgA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/LDKJwycICI62uJcMpdsVgA2" title="首发时间：2019-04-05 01:11:11 章节字数：2040">第七章 冷冷的狗血在脸上胡乱的拍</a>
-                            
-                        </li>
-                        
-                        <li data-rid="8"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/_d2Vbyv4SHrwrjbX3WA1AA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/_d2Vbyv4SHrwrjbX3WA1AA2" title="首发时间：2019-04-05 22:01:46 章节字数：2514">第八章 你好，岳绮罗</a>
-                            
-                        </li>
-                        
-                        <li data-rid="9"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/VCRQHOn1AK7gn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/VCRQHOn1AK7gn4SMoDUcDQ2" title="首发时间：2019-04-06 12:00:00 章节字数：2066">第九章 没有肉的火锅是没有灵魂的</a>
-                            
-                        </li>
-                        
-                        <li data-rid="10"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/LF-b7cIe-klOBDFlr9quQA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/LF-b7cIe-klOBDFlr9quQA2" title="首发时间：2019-04-07 20:55:09 章节字数：2491">第十章 缺钱的富三代</a>
-                            
-                        </li>
-                        
-                        <li data-rid="11"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/MJufqBKTD9D6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/MJufqBKTD9D6ItTi_ILQ7A2" title="首发时间：2019-04-07 23:47:45 章节字数：2063">第十一章 第一场戏</a>
-                            
-                        </li>
-                        
-                        <li data-rid="12"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/VRIa2ia9JQXwrjbX3WA1AA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/VRIa2ia9JQXwrjbX3WA1AA2" title="首发时间：2019-04-09 14:21:34 章节字数：2558">第十二章 萝莉即是正义</a>
-                            
-                        </li>
-                        
-                        <li data-rid="13"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/9bfgCcH8CG6aGfXRMrUjdw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/9bfgCcH8CG6aGfXRMrUjdw2" title="首发时间：2019-04-09 22:25:41 章节字数：2006">第十三章 一见钟情的表演方式</a>
-                            
-                        </li>
-                        
-                        <li data-rid="14"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/pQuSufwoia_gn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/pQuSufwoia_gn4SMoDUcDQ2" title="首发时间：2019-04-10 06:30:00 章节字数：2013">第十四章 如果不是真的喜欢</a>
-                            
-                        </li>
-                        
-                        <li data-rid="15"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/2JMguYXmxBJOBDFlr9quQA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/2JMguYXmxBJOBDFlr9quQA2" title="首发时间：2019-04-11 00:35:11 章节字数：2103">第十五章 新角色？</a>
-                            
-                        </li>
-                        
-                        <li data-rid="16"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/CyWAeNT7jan6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/CyWAeNT7jan6ItTi_ILQ7A2" title="首发时间：2019-04-11 18:40:57 章节字数：2271">第十六章 我是证人</a>
-                            
-                        </li>
-                        
-                        <li data-rid="17"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/_gjbFC9B7DL6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/_gjbFC9B7DL6ItTi_ILQ7A2" title="首发时间：2019-04-12 11:30:00 章节字数：2675">第十七章 角色被抢</a>
-                            
-                        </li>
-                        
-                        <li data-rid="18"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/jaHkkOVSH3dMs5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/jaHkkOVSH3dMs5iq0oQwLQ2" title="首发时间：2019-04-12 17:30:00 章节字数：2393">第十八章 杀神白起，千年鬼怪</a>
-                            
-                        </li>
-                        
-                        <li data-rid="19"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/HhxJJ-himClMs5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/HhxJJ-himClMs5iq0oQwLQ2" title="首发时间：2019-04-13 17:30:00 章节字数：2154">第十九章 儿女情长什么的，太影响我行走江湖</a>
-                            
-                        </li>
-                        
-                        <li data-rid="20"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/tbcxAhXE-i_M5j8_3RRvhw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/tbcxAhXE-i_M5j8_3RRvhw2" title="首发时间：2019-04-13 22:35:00 章节字数：2101">第二十章 再见，张显宗</a>
-                            
-                        </li>
-                        
-                        <li data-rid="21"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/_eqq9Rv6kKH6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/_eqq9Rv6kKH6ItTi_ILQ7A2" title="首发时间：2019-04-14 11:30:00 章节字数：2643">第二十一章 我会认真当一个艺人的</a>
-                            
-                        </li>
-                        
-                        <li data-rid="22"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/mcZJDTYCtYRMs5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/mcZJDTYCtYRMs5iq0oQwLQ2" title="首发时间：2019-04-14 19:14:35 章节字数：2813">第二十二章 来段单口相声怎么样</a>
-                            
-                        </li>
-                        
-                        <li data-rid="23"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/rv8A6Ocq6Ga2uJcMpdsVgA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/rv8A6Ocq6Ga2uJcMpdsVgA2" title="首发时间：2019-04-16 00:01:47 章节字数：2113">第二十三章 来个小曲吧</a>
-                            
-                        </li>
-                        
-                        <li data-rid="24"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/sJIU_2gICYD6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/sJIU_2gICYD6ItTi_ILQ7A2" title="首发时间：2019-04-16 06:00:00 章节字数：2023">第二十四章 探清水河</a>
-                            
-                        </li>
-                        
-                        <li data-rid="25"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/D2WMKHAtiCPwrjbX3WA1AA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/D2WMKHAtiCPwrjbX3WA1AA2" title="首发时间：2019-04-16 15:02:16 章节字数：2215">第二十五章 人气暴涨</a>
-                            
-                        </li>
-                        
-                        <li data-rid="26"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/ybid3fKXctf4p8iEw--PPw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/ybid3fKXctf4p8iEw--PPw2" title="首发时间：2019-04-17 23:30:07 章节字数：2709">第二十六章 没钱的人只能买件两千块的便宜衣服了</a>
-                            
-                        </li>
-                        
-                        <li data-rid="27"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/PfizBxV56K_6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/PfizBxV56K_6ItTi_ILQ7A2" title="首发时间：2019-04-18 06:00:00 章节字数：3046">第二十七章 自古慈母多败儿（求票票）</a>
-                            
-                        </li>
-                        
-                        <li data-rid="28"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/TV4NFVP4U5_gn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/TV4NFVP4U5_gn4SMoDUcDQ2" title="首发时间：2019-04-18 18:09:46 章节字数：2350">第二十八章 过年也就那么回事（收藏！票票！）</a>
-                            
-                        </li>
-                        
-                        <li data-rid="29"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/NeqSlplvDtlMs5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/NeqSlplvDtlMs5iq0oQwLQ2" title="首发时间：2019-04-20 00:31:23 章节字数：2269">第二十九章 兔子为什么不吃窝边草</a>
-                            
-                        </li>
-                        
-                        <li data-rid="30"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/rXVHGwti7haaGfXRMrUjdw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/rXVHGwti7haaGfXRMrUjdw2" title="首发时间：2019-04-20 06:40:00 章节字数：2434">第三十章 小黄鸭和御姐江</a>
-                            
-                        </li>
-                        
-                        <li data-rid="31"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/7GoyIV_9EUFOBDFlr9quQA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/7GoyIV_9EUFOBDFlr9quQA2" title="首发时间：2019-04-21 23:32:53 章节字数：2885">第三十一章 单身久了，看小黄鸭都觉得眉清目秀</a>
-                            
-                        </li>
-                        
-                        <li data-rid="32"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/E2AFfBiaVZ2aGfXRMrUjdw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/E2AFfBiaVZ2aGfXRMrUjdw2" title="首发时间：2019-04-22 19:40:21 章节字数：2181">第三十二章 没有小姐姐，人生好无聊</a>
-                            
-                        </li>
-                        
-                        <li data-rid="33"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/wyCtSkTRU6HM5j8_3RRvhw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/wyCtSkTRU6HM5j8_3RRvhw2" title="首发时间：2019-04-23 01:24:42 章节字数：2490">第三十三章 走，我们去看海</a>
-                            
-                        </li>
-                        
-                        <li data-rid="34"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/LImHSSJuPi2aGfXRMrUjdw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/LImHSSJuPi2aGfXRMrUjdw2" title="首发时间：2019-04-23 06:00:00 章节字数：2452">第三十四章 鸳鸯锅就鸳鸯锅吧</a>
-                            
-                        </li>
-                        
-                        <li data-rid="35"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/quQDYYLxy2nwrjbX3WA1AA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/quQDYYLxy2nwrjbX3WA1AA2" title="首发时间：2019-04-24 06:00:00 章节字数：2695">第三十五章 《鬼怪》最经典镜头</a>
-                            
-                        </li>
-                        
-                        <li data-rid="36"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/WRkS3t3iFR1p4rPq4Fd4KQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/WRkS3t3iFR1p4rPq4Fd4KQ2" title="首发时间：2019-04-25 12:22:45 章节字数：2120">第三十六章 我们去好莱坞发展吧</a>
-                            
-                        </li>
-                        
-                        <li data-rid="37"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/3DhP_bi5ws9OBDFlr9quQA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/3DhP_bi5ws9OBDFlr9quQA2" title="首发时间：2019-04-26 06:00:00 章节字数：2690">第三十七章 结交东阳正午</a>
-                            
-                        </li>
-                        
-                        <li data-rid="38"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/2IydU18p_9r6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/2IydU18p_9r6ItTi_ILQ7A2" title="首发时间：2019-04-26 13:58:42 章节字数：3000">第三十八章 白家来人</a>
-                            
-                        </li>
-                        
-                        <li data-rid="39"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/n9Ar582_fR2aGfXRMrUjdw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/n9Ar582_fR2aGfXRMrUjdw2" title="首发时间：2019-04-27 11:30:00 章节字数：2221">第三十九章 你们是拍电影，还是搞基建</a>
-                            
-                        </li>
-                        
-                        <li data-rid="40"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/0WI84tkfMKm2uJcMpdsVgA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/0WI84tkfMKm2uJcMpdsVgA2" title="首发时间：2019-04-28 00:53:14 章节字数：2202">第四十章 破局的关键</a>
-                            
-                        </li>
-                        
-                        <li data-rid="41"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/P9zoYV3iEkrgn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/P9zoYV3iEkrgn4SMoDUcDQ2" title="首发时间：2019-04-28 11:51:45 章节字数：2627">第四十一章 综艺第一站，《快本》</a>
-                            
-                        </li>
-                        
-                        <li data-rid="42"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/YjfSxB-44ghp4rPq4Fd4KQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/YjfSxB-44ghp4rPq4Fd4KQ2" title="首发时间：2019-04-29 11:30:00 章节字数：2765">第四十二章 让一下，我要开大了！</a>
-                            
-                        </li>
-                        
-                        <li data-rid="43"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/Y2tfohgJmHjwrjbX3WA1AA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/Y2tfohgJmHjwrjbX3WA1AA2" title="首发时间：2019-04-30 06:00:00 章节字数：2116">第四十三章 杯比呀，杯比呀，杯比呀哦</a>
-                            
-                        </li>
-                        
-                        <li data-rid="44"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/Gfk_VXEWbsD4p8iEw--PPw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/Gfk_VXEWbsD4p8iEw--PPw2" title="首发时间：2019-05-01 14:42:15 章节字数：2957">第四十四章 若即又若离</a>
-                            
-                        </li>
-                        
-                        <li data-rid="45"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/9X0R40BduXD4p8iEw--PPw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/9X0R40BduXD4p8iEw--PPw2" title="首发时间：2019-05-02 11:30:00 章节字数：3183">第四十五章 《无心法师》开播</a>
-                            
-                        </li>
-                        
-                        <li data-rid="46"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/dp_TCY0Mgyzgn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/dp_TCY0Mgyzgn4SMoDUcDQ2" title="首发时间：2019-05-03 11:43:21 章节字数：2734">第四十六章 《无心》聊天群</a>
-                            
-                        </li>
-                        
-                        <li data-rid="47"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/MuAIVTpFdStMs5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/MuAIVTpFdStMs5iq0oQwLQ2" title="首发时间：2019-05-04 23:51:47 章节字数：2272">第四十七章 爆款初成</a>
-                            
-                        </li>
-                        
-                        <li data-rid="48"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/lfOSIcFBLu6aGfXRMrUjdw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/lfOSIcFBLu6aGfXRMrUjdw2" title="首发时间：2019-05-05 21:34:30 章节字数：2314">第四十八章 暑期最强黑马网剧</a>
-                            
-                        </li>
-                        
-                        <li data-rid="49"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/RpJ94eKQZkLgn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/RpJ94eKQZkLgn4SMoDUcDQ2" title="首发时间：2019-05-05 23:57:15 章节字数：2339">第四十九章 新戏男主角（求波票票）</a>
-                            
-                        </li>
-                        
-                        <li data-rid="50"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/Cx6BFIrUEgW2uJcMpdsVgA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/Cx6BFIrUEgW2uJcMpdsVgA2" title="首发时间：2019-05-06 23:52:52 章节字数：2877">第五十章 爆红的“嫌弃夫妇”</a>
-                            
-                        </li>
-                        
-                        <li data-rid="51"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/S2fQlSpiy_bgn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/S2fQlSpiy_bgn4SMoDUcDQ2" title="首发时间：2019-05-07 22:52:09 章节字数：2224">第五十一章 易燃易爆炸</a>
-                            
-                        </li>
-                        
-                        <li data-rid="52"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/vtUeOCfIqQn6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/vtUeOCfIqQn6ItTi_ILQ7A2" title="首发时间：2019-05-08 23:57:43 章节字数：2549">第五十二章 “张显宗，我牙疼！”“牙疼，就用中華牙膏！”</a>
-                            
-                        </li>
-                        
-                        <li data-rid="53"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/pb_01KvEeg9Ms5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/pb_01KvEeg9Ms5iq0oQwLQ2" title="首发时间：2019-05-09 18:34:54 章节字数：2303">第五十三章 被拒绝的汉唐</a>
-                            
-                        </li>
-                        
-                        <li data-rid="54"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/SSf3Y-cEmW5p4rPq4Fd4KQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/SSf3Y-cEmW5p4rPq4Fd4KQ2" title="首发时间：2019-05-09 23:09:31 章节字数：2038">第五十四张 这本书莫不是要变成神豪流？</a>
-                            
-                        </li>
-                        
-                        <li data-rid="55"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/vz4kOrCAHJtp4rPq4Fd4KQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/vz4kOrCAHJtp4rPq4Fd4KQ2" title="首发时间：2019-05-10 01:43:13 章节字数：2356">第五十五章 咱们是朋友嘛</a>
-                            
-                        </li>
-                        
-                        <li data-rid="56"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/GD22EK0Nr0vgn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/GD22EK0Nr0vgn4SMoDUcDQ2" title="首发时间：2019-05-11 11:09:40 章节字数：2231">第五十六章 败家子儿白㭉</a>
-                            
-                        </li>
-                        
-                        <li data-rid="57"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/mt3HXsStP5aaGfXRMrUjdw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/mt3HXsStP5aaGfXRMrUjdw2" title="首发时间：2019-05-11 23:39:55 章节字数：2439">第五十七章 真实，才是最能感染观众的</a>
-                            
-                        </li>
-                        
-                        <li data-rid="58"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/9Ejpkx6EKotp4rPq4Fd4KQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/9Ejpkx6EKotp4rPq4Fd4KQ2" title="首发时间：2019-05-12 23:20:11 章节字数：2484">第五十八章 关于法医的新剧</a>
-                            
-                        </li>
-                        
-                        <li data-rid="59"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/onWlPR31b0_6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/onWlPR31b0_6ItTi_ILQ7A2" title="首发时间：2019-05-13 21:16:36 章节字数：2199">第五十九章 这剧，得演！</a>
-                            
-                        </li>
-                        
-                        <li data-rid="60"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BherLZ7NuLr6ItTi_ILQ7A2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/BherLZ7NuLr6ItTi_ILQ7A2" title="首发时间：2019-05-14 00:09:42 章节字数：2124">第六十章 这个白沐到底是谁！</a>
-                            
-                        </li>
-                        
-                        <li data-rid="61"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/Zqdh0ur2flBOBDFlr9quQA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/Zqdh0ur2flBOBDFlr9quQA2" title="首发时间：2019-05-14 21:42:28 章节字数：2994">第六十一章 最大的竞争对手</a>
-                            
-                        </li>
-                        
-                        <li data-rid="62"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/NUIKJbWpA_K2uJcMpdsVgA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/NUIKJbWpA_K2uJcMpdsVgA2" title="首发时间：2019-05-15 11:30:00 章节字数：3160">第六十二章 人命，大于天</a>
-                            
-                        </li>
-                        
-                        <li data-rid="63"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/3BldMzkju_u2uJcMpdsVgA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/3BldMzkju_u2uJcMpdsVgA2" title="首发时间：2019-05-15 21:41:21 章节字数：2133">第六十三章 聊天止于表情包</a>
-                            
-                        </li>
-                        
-                        <li data-rid="64"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/OuLCvGUvcQBMs5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/OuLCvGUvcQBMs5iq0oQwLQ2" title="首发时间：2019-05-16 21:43:53 章节字数：3105">第六十四章 续约，还是离开</a>
-                            
-                        </li>
-                        
-                        <li data-rid="65"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/MD0noHnvaxW2uJcMpdsVgA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/MD0noHnvaxW2uJcMpdsVgA2" title="首发时间：2019-05-17 12:07:56 章节字数：2771">第六十五章 极挑男人帮的第一次见面</a>
-                            
-                        </li>
-                        
-                        <li data-rid="66"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/we_GcSMSyr7wrjbX3WA1AA2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/we_GcSMSyr7wrjbX3WA1AA2" title="首发时间：2019-05-17 23:33:10 章节字数：2252">第六十六章 《极挑》的首期录制</a>
-                            
-                        </li>
-                        
-                        <li data-rid="67"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/DnOpAum_jg1p4rPq4Fd4KQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/DnOpAum_jg1p4rPq4Fd4KQ2" title="首发时间：2019-05-18 23:07:59 章节字数：4536">第六十七章 大小狐狸</a>
-                            
-                        </li>
-                        
-                        <li data-rid="68"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/WkbAHz4PKlFp4rPq4Fd4KQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/WkbAHz4PKlFp4rPq4Fd4KQ2" title="首发时间：2019-05-19 23:34:24 章节字数：4894">第六十八章 中级煎饼师</a>
-                            
-                        </li>
-                        
-                        <li data-rid="69"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/M7AyCk9-Kp3gn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/M7AyCk9-Kp3gn4SMoDUcDQ2" title="首发时间：2019-05-20 23:28:09 章节字数：4480">第六十九章 我也是有粉丝的人呢</a>
-                            
-                        </li>
-                        
-                        <li data-rid="70"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/yktL5ROBRGuaGfXRMrUjdw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/yktL5ROBRGuaGfXRMrUjdw2" title="首发时间：2019-05-21 23:47:00 章节字数：4443">第七十章 最后的决战</a>
-                            
-                        </li>
-                        
-                        <li data-rid="71"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/JFSxfo2PcVrgn4SMoDUcDQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/JFSxfo2PcVrgn4SMoDUcDQ2" title="首发时间：2019-05-22 21:11:35 章节字数：2723">第七十一章 极限挑战，这就是命</a>
-                            
-                        </li>
-                        
-                        <li data-rid="72"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/TiYIiQ0pzGz4p8iEw--PPw2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/TiYIiQ0pzGz4p8iEw--PPw2" title="首发时间：2019-05-23 11:30:00 章节字数：2015">第七十二章 女人，你的名字叫自欺欺人</a>
-                            
-                        </li>
-                        
-                        <li data-rid="73"><a href="https://read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/IqugDVCT18ZMs5iq0oQwLQ2" target="_blank" data-eid="qd_G55" data-cid="//read.qidian.com/chapter/OvOS0IGyGEm3DdYzXPCGvA2/IqugDVCT18ZMs5iq0oQwLQ2" title="首发时间：2019-05-23 22:21:01 章节字数：475">上架啦！！</a>
-                            
-                        </li>
-                        
+                        {% endfor %}
                     </ul>
                 </div>
-                
-                <div class="volume">
-                    <div class="cover"></div>
-                    
-                    <h3>
-                        
-                        <a class="subscri j_subscribe" href="javascript:" data-eid="qd_G56" target="_blank" data-volumeid="77931909" data-volumenum="77931909"><em class="btn"><b class="iconfont"></b>订阅本卷</em></a>
-                        
-                        正文卷<i>·</i>共2章<span class="vip"> VIP</span><em class="count">本卷共<cite>4344</cite>字</em></h3>
-                    <ul class="cf">
-                        
-                        <li data-rid="1"><a href="https://vipreader.qidian.com/chapter/1015055921/467335472" target="_blank" data-eid="qd_G55" data-cid="//vipreader.qidian.com/chapter/1015055921/467335472" title="首发时间：2019-05-24 12:03:31 章节字数：2047">第七十三章 意外的见面（求订阅）</a>
-                            
-                            <em class="iconfont "></em>
-                            
-                        </li>
-                        
-                        <li data-rid="2"><a href="https://vipreader.qidian.com/chapter/1015055921/467350826" target="_blank" data-eid="qd_G55" data-cid="//vipreader.qidian.com/chapter/1015055921/467350826" title="首发时间：2019-05-24 13:18:32 章节字数：2297">第七十四章 Stay with me（第二更求订阅）</a>
-                            
-                            <em class="iconfont "></em>
-                            
-                        </li>
-                        
-                    </ul>
-                </div>
-                
             </div>
             
         </div>
         
-        <div class="book-content-wrap cf hidden" style="display: none;">
+        <div class="book-content-wrap cf hidden" style="display: block;">
             
             <div class="left-wrap fl">
                 <div class="book-info-detail">
@@ -888,24 +555,6 @@
                     </div>
                 </div>
                 
-                <div class="games-op-wrap" data-l1="17">
-                    <div class="left-game">
-                        
-                        <a href="http://cpgame.qd.game.qidian.com/Home/Index/directLogin/name/dhhj/way/1?qd_game_key=dhhj345x70&amp;qd_dd_p1=1696" target="_blank" style="display: block" data-eid="qd_G102" data-qd_dd_p1="1"><img src="{% static 'images/0' %}"><span class="op-tag"></span></a>
-                        
-                    </div>
-                    <div class="right-game">
-                        
-                        <a href="http://cpgame.qd.game.qidian.com/Home/Index/directLogin/name/wsd/way/1?qd_game_key=wsd345x70&amp;qd_dd_p1=31855" target="_blank" style="display: block" data-eid="qd_G103" data-qd_dd_p1="1"><img src="{% static 'images/3c9ee02904046f28ba4362727b577eef.jpg' %}"><span class="op-tag"></span></a>
-                        
-                    </div>
-                </div>
-                
-                
-                <div style="text-align: center;">
-            <p style=" margin-top: 25px; "> <img src="{% static 'images/0(1)' %}" style=" width: 200px; height: 200px; "></p>
-                <p style="    font-size: 14px; color: #999; ">下载「起点读书」 获取更多内容</p>
-                </div>
                 <!-- 
                 <div class="user-commentWrap" data-l1="8">
                     <div class="user-comment-wrap book-friend">
@@ -1070,185 +719,6 @@
    </div>
 </div>
                 
-                
-                <div class="right-op-wrap mb10" data-l1="18">
-                    
-                    <a href="http://cpgame.qd.game.qidian.com/Home/Index/directLogin/name/sgzz2/way/1?qd_game_key=sgzz2250x174&amp;qd_dd_p1=1540" target="_blank" style="display: block" data-eid="qd_G105" data-qd_dd_p1="1"><img src="{% static 'images/0(3)' %}"><span class="op-tag"></span></a>
-                    
-                </div>
-                
-                <div class="fansRankWrap mb10" id="fansRankWrap" data-l1="12">
-                       
-                
-<div class="fans-rank-list">
-    <div class="rank-list">
-        <h3 class="wrap-title lang"><a class="blue" href="https://book.qidian.com/fansrank/1015055921" target="_blank" data-eid="qd_G71">更多<em class="iconfont"></em></a>粉丝排行榜</h3>
-        <div class="book-list">
-            <ul>
-                
-                <li class="top" data-rid="1">
-                    <div class="num-box"><span class="num1">1</span></div>
-                    <div class="top-name-box">
-                        <h4><a href="https://me.qidian.com/friendIndex.aspx?id=322520450" class="name" target="_blank" data-eid="qd_G50" title="业余粉条">业余粉条</a></h4>
-                        <p><span>32010</span>粉丝值</p>
-                    </div>
-                    <div class="fans-img">
-                        <a href="https://me.qidian.com/friendIndex.aspx?id=322520450" target="_blank" data-eid=""><img src="{% static 'images/50' %}"></a>
-                        <span class="user-level lv6"></span>
-                    </div>
-                </li>
-                
-                <li class="top" data-rid="2">
-                    <div class="num-box"><span class="num2">2</span></div>
-                    <div class="top-name-box">
-                        <h4><a href="https://me.qidian.com/friendIndex.aspx?id=306214191" class="name" target="_blank" data-eid="qd_G50" title="凯驰">凯驰</a></h4>
-                        <p><span>30008</span>粉丝值</p>
-                    </div>
-                    <div class="fans-img">
-                        <a href="https://me.qidian.com/friendIndex.aspx?id=306214191" target="_blank" data-eid=""><img src="{% static 'images/50(1)' %}"></a>
-                        <span class="user-level lv6"></span>
-                    </div>
-                </li>
-                
-                <li class="top" data-rid="3">
-                    <div class="num-box"><span class="num3">3</span></div>
-                    <div class="top-name-box">
-                        <h4><a href="https://me.qidian.com/friendIndex.aspx?id=220900385" class="name" target="_blank" data-eid="qd_G50" title="逗比走路美美哒">逗比走路美美哒</a></h4>
-                        <p><span>20700</span>粉丝值</p>
-                    </div>
-                    <div class="fans-img">
-                        <a href="https://me.qidian.com/friendIndex.aspx?id=220900385" target="_blank" data-eid=""><img src="{% static 'images/50(2)' %}"></a>
-                        <span class="user-level lv5"></span>
-                    </div>
-                </li>
-                
-
-                
-                <li data-rid="4">
-                    <div class="num-box"><span class="num4">4</span></div>
-                    <div class="name-box">
-                        <a class="name" href="https://me.qidian.com/friendIndex.aspx?id=211011084" target="_blank" title="最爱gakki的木桐桐" data-eid="qd_G50">最爱gakki的木桐桐</a>
-                        <i class="total">3021</i>
-                    </div>
-                </li>
-                
-                <li data-rid="5">
-                    <div class="num-box"><span class="num5">5</span></div>
-                    <div class="name-box">
-                        <a class="name" href="https://me.qidian.com/friendIndex.aspx?id=144105110" target="_blank" title="我爱艾薇儿" data-eid="qd_G50">我爱艾薇儿</a>
-                        <i class="total">2300</i>
-                    </div>
-                </li>
-                
-                <li data-rid="6">
-                    <div class="num-box"><span class="num6">6</span></div>
-                    <div class="name-box">
-                        <a class="name" href="https://me.qidian.com/friendIndex.aspx?id=216001248" target="_blank" title="吃灯泡" data-eid="qd_G50">吃灯泡</a>
-                        <i class="total">2000</i>
-                    </div>
-                </li>
-                
-                <li data-rid="7">
-                    <div class="num-box"><span class="num7">7</span></div>
-                    <div class="name-box">
-                        <a class="name" href="https://me.qidian.com/friendIndex.aspx?id=213514213" target="_blank" title="剑飞灵" data-eid="qd_G50">剑飞灵</a>
-                        <i class="total">1110</i>
-                    </div>
-                </li>
-                
-                <li data-rid="8">
-                    <div class="num-box"><span class="num8">8</span></div>
-                    <div class="name-box">
-                        <a class="name" href="https://me.qidian.com/friendIndex.aspx?id=322577013" target="_blank" title="酷酷的皓" data-eid="qd_G50">酷酷的皓</a>
-                        <i class="total">1021</i>
-                    </div>
-                </li>
-                
-                <li data-rid="9">
-                    <div class="num-box"><span class="num9">9</span></div>
-                    <div class="name-box">
-                        <a class="name" href="https://me.qidian.com/friendIndex.aspx?id=215263207" target="_blank" title="公子如懿" data-eid="qd_G50">公子如懿</a>
-                        <i class="total">1017</i>
-                    </div>
-                </li>
-                
-                <li data-rid="10">
-                    <div class="num-box"><span class="num10">10</span></div>
-                    <div class="name-box">
-                        <a class="name" href="https://me.qidian.com/friendIndex.aspx?id=307784344" target="_blank" title="白夜锦衣" data-eid="qd_G50">白夜锦衣</a>
-                        <i class="total">1010</i>
-                    </div>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-</div>
-                <div class="topFansWrap mb10" id="topFansWrap" data-l1="12">
-                    
-                
-<div class="famous-fans-list">
-    <div class="rank-list">
-        <h3 class="wrap-title lang">本书名人榜</h3>
-        <div class="fans-list">
-            <ul>
-                
-                <li data-rid="1" class="">
-                    <div class="fans-info">
-                        <h4><a href="https://me.qidian.com/friendIndex.aspx?id=306214191" class="name" target="_blank">凯驰</a></h4>
-                        <p><span>30000</span>粉丝值</p>
-                    </div>
-                    <div class="fans-img">
-                        <a href="https://me.qidian.com/friendIndex.aspx?id=306214191" target="_blank"><img src="{% static 'images/50(1)' %}"></a>
-                        <span class="fans-level icon-fans-first"></span>
-                    </div>
-                </li>
-                <li data-rid="2" class="">
-                    <div class="fans-info">
-                        <h4><a href="https://me.qidian.com/friendIndex.aspx?id=144105110" class="name" target="_blank">我爱艾薇儿</a></h4>
-                        <p><span>196</span>投票值</p>
-                    </div>
-                    <div class="fans-img">
-                        <a href="https://me.qidian.com/friendIndex.aspx?id=144105110" target="_blank"><img src="{% static 'images/50(3)' %}"></a>
-                        <span class="fans-level icon-fans-second"></span>
-                    </div>
-                </li>
-                <li data-rid="3" class="hide-hover hidden">
-                    <div class="fans-info">
-                        <h4><a href="javascript:" class="name">暂时空缺</a></h4>
-                        <p>上月书评最活跃用户</p>
-                    </div>
-                    <div class="fans-img">
-                        <a href="javascript:"><img src="{% static 'images/user.f22d3.png' %}"></a>
-                        <span class="fans-level icon-fans-third"></span>
-                    </div>
-                </li>
-                <li data-rid="4" class="hide-hover">
-                    <div class="fans-info">
-                        <h4><a href="javascript:" class="name">暂时空缺</a></h4>
-                        <p>首个一次性打赏千万的用户</p>
-                    </div>
-                    <div class="fans-img">
-                        <a href="javascript:"><img src="{% static 'images/user.f22d3.png' %}"></a>
-                        <span class="fans-level icon-fans-fourth"></span>
-                    </div>
-                </li>
-                <li data-rid="5" class="hide-hover">
-                    <div class="fans-info">
-                        <h4><a href="javascript:" class="name">暂时空缺</a></h4>
-                        <p>首个一次性打赏百万的用户</p>
-                    </div>
-                    <div class="fans-img">
-                        <a href="javascript:"><img src="{% static 'images/user.f22d3.png' %}"></a>
-                        <span class="fans-level icon-fans-fifth"></span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-</div>                
             </div>
         </div>
         
@@ -1444,5 +914,24 @@
 </script>
 
 
+<script>
+    (function($) {
+        $("li:has(> #j-bookInfoPage)").click(function(){
+            $(this).addClass("act");
+            $(".book-content-wrap").attr("style", "display: block;");
+            $(".j_catalog_block").removeClass("act");
+            $(".catalog-content-wrap").attr("style", "display: none;");
+        })        
+    })(jQuery);
+    
+    (function($) {
+        $(".j_catalog_block").click(function(){
+            $(this).addClass("act");
+            $(".book-content-wrap").attr("style", "display: none;");
+            $("li:has(> #j-bookInfoPage)").removeClass("act");
+            $(".catalog-content-wrap").attr("style", "display: block;");
+        })        
+    })(jQuery);
+</script>
 
 <div id="download_plus_animation"></div></body></html>

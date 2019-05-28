@@ -3,7 +3,6 @@ from .views import IndexView, DetailView, ContentView
 
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),
-    # re_path(r"(<?Pbook_id>.*?)/(<?Pcontent_id>\d+)", DetailView.as_view(), name="detail")
-    path("123", DetailView.as_view(), name="detail"),
-    path("456", ContentView.as_view(), name="content"),
+    re_path(r"^(?P<book_id>\d+)$", DetailView.as_view(), name="detail"),
+    re_path(r"^(?P<book_id>\d+)/(?P<num>\d+)$", ContentView.as_view(), name="content"),
 ]

@@ -18,7 +18,10 @@ class BookType(models.Model):
 class Book(models.Model):
     """小说模型类"""
     type = models.ForeignKey('BookType', verbose_name='小说分类', on_delete=models.CASCADE)
-    name = models.CharField(max_length=30, verbose_name='小说名称')
+    name = models.CharField(max_length=50, verbose_name='小说名称')
+    author = models.CharField(max_length=30, verbose_name='小说作者')
+    desp = models.CharField(max_length=300, verbose_name='小说简介')
+
     
     class Meta:
         db_table = 'bk_book_name'
@@ -34,6 +37,7 @@ class BookContent(models.Model):
     book = models.ForeignKey('Book', verbose_name='小说名称', on_delete=models.CASCADE)
     name = models.CharField(max_length=50, verbose_name='章节名称')
     content = models.TextField()
+    num = models.IntegerField()
     
     class Meta:
         db_table = 'bk_book_content'
