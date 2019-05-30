@@ -15,7 +15,7 @@ SPIDER_MODULES = ['novels.spiders']
 NEWSPIDER_MODULE = 'novels.spiders'
 
 LOG_ENABLED = True
-LOG_LEVEL = "DEBUG"
+LOG_LEVEL = "WARNING"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'novels (+http://www.yourdomain.com)'

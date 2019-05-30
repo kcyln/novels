@@ -13,3 +13,6 @@ class NovelsItem(scrapy.Item):
     name = scrapy.Field()
     content = scrapy.Field()
     num = scrapy.Field()
+    book_name = scrapy.Field()
+    author = scrapy.Field()
+    desp = scrapy.Field()
