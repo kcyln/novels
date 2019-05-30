@@ -13,7 +13,8 @@ class DetailView(View):
         book = Book.objects.get(id=book_id)
         content_list = BookContent.objects.filter(book=book).order_by("num")
         totalpage = BookContent.objects.filter(book=book).count()
-        context = {"book": book, "content_list": content_list, "totalpage": totalpage}
+        last_updated = BookContent.objects.get(book=book, num=totalpage)
+        context = {"book": book, "content_list": content_list, "totalpage": totalpage, "last_updated": last_updated}
         return render(request, "detail.html", context)
 
 

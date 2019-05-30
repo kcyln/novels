@@ -16,7 +16,8 @@ class BiqugeSpider(scrapy.Spider):
             yield scrapy.Request(cate, callback=self.parse_list)
     
     def parse_list(self, response):
-        num = 0
+        """获取章节列表"""
+        num = 0  # 利用num对小说章节进行排序
         item = NovelsItem()
         item["book_name"] = response.xpath("//h1/text()").extract_first()
         item["author"] = response.xpath("//div[@id='info']/p[1]/text()").extract_first().replace("作\xa0\xa0\xa0\xa0者：", "")
@@ -31,7 +32,7 @@ class BiqugeSpider(scrapy.Spider):
 
 
     def parse_detail(self, response):
-        
+        """获取章节内容"""
         item = response.meta['item']
         item["num"] = response.meta['num']
         item['name'] = response.xpath("//h1/text()").extract_first()

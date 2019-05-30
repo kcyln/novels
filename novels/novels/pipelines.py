@@ -15,7 +15,6 @@ class NovelsPipeline(object):
 
     def process_item(self, item, spider):
 
-        print(item)
         sql = "insert into bk_book_name(name, type_id, author, desp) select %s, %s, %s, %s from dual where not exists (select name from bk_book_name where name=%s and author=%s)"
         args = (item["book_name"], 1, item['author'], item["desp"], item["book_name"], item['author'])
         self.cursor.execute(sql, args)

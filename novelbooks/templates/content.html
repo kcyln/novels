@@ -223,9 +223,9 @@
                 <div class="info fl">
                     <a href="https://book.qidian.com/info/1011447634" target="_blank" data-bid="1011447634" data-auid="640" data-eid="qd_R102"><em class="iconfont"></em>{{ book.name }}</a>
                     
-                        <a href="https://me.qidian.com/authorIndex.aspx?id=640" target="_blank" data-bid="1011447634" data-auid="640" data-eid="qd_R103"><em class="iconfont"></em>华表</a>
+                        <a href="https://me.qidian.com/authorIndex.aspx?id=640" target="_blank" data-bid="1011447634" data-auid="640" data-eid="qd_R103"><em class="iconfont"></em>{{ book.author }}</a>
                     
-                    <i><em class="iconfont"></em><span class="j_chapterWordCut">2661</span>字</i>
+                    <i><em class="iconfont"></em><span class="j_chapterWordCut">0</span>字</i>
                     <i><em class="iconfont"></em><span class="j_updateTime">2018.03.01 15:19</span></i>
                 </div>
             <!-- start 评论列表 -->
@@ -273,7 +273,7 @@
 <div class="chapter-control dib-wrap" data-l1="3">
     
     <a id="j_chapterPrev" data-eid="qd_R107" href="{% url 'books:content' book.id prevpage %}">上一章</a><span>|</span>
-    <a href="https://book.qidian.com/info/1011447634#Catalog" target="_blank" data-eid="qd_R108">目录</a><span>|</span>
+    <a href="{% url 'books:detail' book.id %}" target="_blank" data-eid="qd_R108">目录</a><span>|</span>
     <a id="j_chapterNext" href="{% url 'books:content' book.id nextpage %}" data-eid="qd_R109">下一章</a>
 </div>
 
@@ -301,13 +301,6 @@
                     设置
                 </div>
             </dd>
-            <dd id="j_phoneRead" data-eid="qd_R83">
-                <a href="javascript:"><i><em class="iconfont"></em><span>手机</span></i></a>
-                <div class="guide-box" style="display: none;">
-                    <cite></cite>
-                    手机阅读
-                </div>
-            </dd>
             <dd data-eid="qd_R84">
                 <a class="add-book" href="javascript:" data-bookid="1011447634"><i><em class="iconfont"></em><span>书架</span></i></a>
                 <div class="guide-box" style="display: none;">
@@ -316,7 +309,7 @@
                 </div>
             </dd>
             <dd data-eid="qd_R85">
-                <a href="https://book.qidian.com/info/1011447634" target="_blank"><i><em class="iconfont"></em><span>书页</span></i></a>
+                <a href="{% url 'books:detail' book.id %}" target="_blank"><i><em class="iconfont"></em><span>书页</span></i></a>
                 <div class="guide-box" style="display: none;">
                     <cite></cite>
                     返回书页
@@ -327,13 +320,6 @@
     </div>
     <div class="right-bar-list" id="j_rightBarList" style="bottom: 0px;">
         <dl>
-            <dd id="navReward" data-showtype="3" data-aid="qd_R87">
-                <a href="javascript:"><i><em class="iconfont"></em><span>打赏</span></i></a>
-                <div class="guide-box" style="display: none;">
-                    <cite></cite>
-                    打赏
-                </div>
-            </dd>
             <dd id="navTicket" data-showtype="2" data-aid="qd_R88">
                 <a href="javascript:"><i><em class="iconfont"></em><span>投票</span></i></a>
                 <div class="guide-box" style="display: none;">
@@ -341,7 +327,7 @@
                     投票
                 </div>
             </dd>
-            <!-- 
+            
             <dd id="j_discussHref" data-eid="qd_R89">
                 
                 <a href="//forum.qidian.com/NewForum/List.aspx?forumId=1011447634" target="_blank"><i><em class="iconfont">&#xe658;</em><span>评论</span></i></a>
@@ -350,7 +336,7 @@
                     评论
                 </div>
             </dd>
-             -->
+            
             <dd class="go-top" id="j_goTop" title="返回顶部" data-eid="qd_R90" style="display: block;">
                 <a href="#"><i><em class="iconfont">^</em></i></a>
             </dd>
@@ -367,8 +353,6 @@
     g_data.envType = 'pro';
     //用作统计PV
     g_data.pageId = 'qd_P_read';
-    //环境域名
-    g_data.domainSearch = 'www.qidian.com/search';
     //阅读页配置参数
     g_data.readSetting = {
         "t" : 0,
@@ -378,14 +362,11 @@
         "rt" : 0,
         "autoBuy" : 0
     };
-    g_data.isPublication = false;
-    g_data.salesMode = 1;
     //书信息
     g_data.bookInfo = {
         "bookId":{{ book.id }},
         "bookName":'{{ book.name }}',
-        "authorId":640,
-        "authorName": '华表'
+        "authorName": '{{ book.author }}'
     };
    
     //页面初始化章节信息
@@ -396,56 +377,17 @@
         vipStatus : 0,
         //上一章id
         prevId : {{ prevpage }},
+        // 当前页id
+        currId: {{ currentpage }},
         //下一章id
         nextId : {{ nextpage }},
         // 总章节数
         totalPage: {{ totalpage }},
         //本章节是否已经订阅
         isBuy: 0
-    };
-    //页面进入时,下一章是否是vip章节
-    g_data.nextChapterVip = 0;
-    //章节底部广告
-    g_data.bottomOps = {"hasAd":0};
-    //打赏参数
-    g_data.pageJson = {
-        // 是否是VIP书籍，传入js，在弹窗时需要判断，如果不是VIP看不到月票Tab
-        isVip:1,
-        // 是否是出版物
-        isPublication: false,
-        //是否已登录，传入js，EJS后加载模板判断是否显示
-        isLogin:0,
-        //是否签约作品，传入js，EJS后加载模板判断是否显示
-        isSign:1,
-        //是否要送月票 传入js， EJS后加载模板判断使用
-        noRewardMonthTic:0,
-        //获得bookId的json格式，传入js，EJS后加载模板中可以直接使用
-        bookId:1011447634,
-        //获得签约状态，传入js，EJS后加载弹窗下载使用
-        signStatus:'Ａ级签约',
-        //作家专区链接环境变量传入EJS模板
-        mePreFix:'//me.qidian.com',
-        //讨论区连接环境变量传入EJS模板
-        forumPreFix:'//forum.qidian.com'
-    };
-    // 区分女生网 && 起点中文网
-    g_data.isWebSiteType = 1;
+    }
 </script>
 
-<script>
-    (function(){
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
 <script data-ignore="true" src="{% static 'js/LBF.js.下载' %}"></script>
 <script>
@@ -532,6 +474,15 @@
     var count = wordCount(content_data)
     $(".j_chapterWordCut").html(count)
 
+    // 标记上一章和下一章
+    var num = {{ currentpage }};
+    var totalpage = {{ totalpage }}
+    if (num <= 0 || num > totalpage){num = 1}
+    if (num == totalpage){
+        $("#j_chapterNext").attr("href", "javascript:;")
+    }else if(num == 1){
+        $("#j_chapterPrev").attr("href", "javascript:;")
+    }
 </script>
 
 
