@@ -1,0 +1,104 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta name="description" content="小说阅读,精彩小说尽在起点中文网.">
+<meta name="keywords" content="小说,小说网,玄幻小说,武侠小说,都市小说,历史小说,网络小说,言情小说,青春小说,原创网络文学">
+<meta name="robots" content="all">
+<meta name="googlebot" content="all">
+<meta name="baiduspider" content="all">
+<meta http-equiv="mobile-agent" content="format=wml; url=http://m.qidian.com">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.qidian.com">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://h5.qidian.com/bookstore.html">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit">
+<title>账号登录 | 起点中文网_阅文集团旗下网站</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/pact.css' %}">
+<link rel="shortcut icon" type="image/x-icon" href="https://sta.gtimg.com/qd5/images/qd_icon.ico">
+<link rel="Bookmark" type="image/x-icon" href="https://sta.gtimg.com/qd5/images/qd_icon.ico"></head>
+<body>
+<div class="wrap">
+    <!-- start 头部 -->
+    <div class="header reg-header qidian">
+        <div class="box-center">
+            <div class="logo cf"><a href="http://www.qidian.com/"></a><em></em><span class="lang">用户注册</span></div>
+        </div>
+    </div>
+    <!-- end 头部 -->
+    <!-- start 整体居中 -->
+    <div class="box-center">
+        <!-- start 注册模块 -->
+        <div class="reg-wrap">
+            <!-- start 注册进度 -->
+            <div class="reg-step">
+                <!-- 步进到哪一步，就给当前span上class：act -->
+                <span class="lang act">填写注册信息</span>
+            </div>
+            <div class="reg-form-wrap">
+                <form action="">
+                    <div class="reg-form-list form-list">
+                        <dl>
+                            <dd id="username"><em>用户名</em><input type="text" id="user_name" placeholder="输入用户名"></dd>
+                            <dd id="phonepwd" class=""><em>密码</em><input type="password" id="txtphonepwd" placeholder="6-18位大小写字母、符号或数字" aria-autocomplete="list">
+                                <div class="password-tip">
+                                    <span><cite></cite></span>
+                                    <p id="pwdrule1">长度为6-18个字符</p>
+                                    <p id="pwdrule2">不能是9位以下的纯数字</p>                                                 
+                                </div>
+                            </dd>
+                            <dd id="password2"><em>确认密码</em><input type="password" id="txtphonepwd2" placeholder="再次输入密码"></dd>
+                        </dl>
+                        <div class="deal">
+                            <input type="checkbox" id="deal" name="checkbox" checked="">
+                            <label for="deal" class="ui-checkbox"></label><label for="deal">我已阅读并同意</label><a href="https://passport.yuewen.com/pact.html?mobile=0" target="_blank">《用户服务协议》</a>
+                        </div>
+                        <a class="red-btn go-reg btn-qidian" href="javascript:" id="btnPhoneRegister">立即注册</a>
+                    </div>
+                </form>
+            </div>
+            <!-- end 注册进度 -->
+        </div>
+        <!-- end 注册模块 -->
+    </div>
+    <!-- end 整体居中 -->
+    <script src="{% static 'js/jquery-1.9.1.min.js.下载' %}"></script>
+    <script src="{% static 'js/Checkbox.js.下载' %}"></script>
+    <script src="{% static 'js/jquery.cookie.js.下载' %}"></script>
+    <script src="{% static 'js/yuewenauth.js.下载' %}"></script>
+    <script src="{% static 'js/register.js.下载' %}"></script>
+    <script src="{% static 'js/rsa_encrypt.js.下载' %}"></script>
+   
+    
+    <div class="footer">
+    <div class="link">
+        <a href="https://www.qidian.com/about/intro" target="_blank">关于起点</a>
+        <a href="https://www.qidian.com/about/contact" target="_blank">联系我们</a>
+        <a href="http://join.book.qq.com/index.html" target="_blank">加入我们</a>
+        <a href="http://bbs.qidian.com/list/53" target="_blank">提交建议</a>
+    </div>
+    <p>Copyright (C) 2002-2019 www.qidian.com All Right Reserved版权所有 上海玄霆娱乐信息科技有限公司</p>
+    <p>上海玄霆娱乐信息科技有限公司 增值电信业务经营许可证沪B2-20080046 沪网文[2012]0068-008 新出网证（沪）字010 沪ICP备08017520号-1</p>
+    <p>本站所收录作品、社区话题、书库评论及本站所做之广告均属个人行为，与本站立场无关</p>
+</div></div>
+
+<script>
+    $(function () {
+        Stat.init();
+    });
+</script>
+
+<script type="text/javascript" async="" src="{% static 'js/212b3d4039ab5319ec.js.下载' %}"></script><div id="download_plus_animation"></div>
+<script>
+    $(".password-tip").hide();
+    $("#txtphonepwd").focus(function(){
+        $(".password-tip").show();
+    })
+    $("#txtphonepwd").blur(function(){
+        $(".password-tip").hide();
+    })
+</script>
+
+    </body>
+</html>

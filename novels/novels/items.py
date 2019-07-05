@@ -14,5 +14,7 @@ class NovelsItem(scrapy.Item):
     content = scrapy.Field()
     num = scrapy.Field()
     book_name = scrapy.Field()
+    book_image_url = scrapy.Field()
     author = scrapy.Field()
+    intro = scrapy.Field()
     desp = scrapy.Field()

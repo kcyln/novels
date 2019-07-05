@@ -22,7 +22,7 @@ class Book(models.Model):
     author = models.CharField(max_length=30, verbose_name='小说作者')
     desp = models.CharField(max_length=300, verbose_name='小说简介')
 
-    
+
     class Meta:
         db_table = 'bk_book_name'
         verbose_name = '小说名称'

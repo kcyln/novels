@@ -16,9 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+from books.views import IndexView
+
+from .apis import get_all_books
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include(("books.urls", "books"), namespace="books")),
     path('users/', include(("users.urls", "users"), namespace="users")),
+    path('api/books', get_all_books, name='api_books'),
+
+    path('', IndexView.as_view(), name="index")
 ]
